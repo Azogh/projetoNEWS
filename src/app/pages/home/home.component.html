@@ -1,6 +1,13 @@
-<ol>
-  <li *ngFor="let aluno of alunos | async">
-    {{ aluno.nome }} - {{ aluno.idade }}
-    {{ aluno.sobrenome }}
-  </li>
-</ol>
+<div *ngIf="newsArticles; else loading">
+  <ul>
+    <li *ngFor="let article of newsArticles">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+      <a [href]="article.url" target="_blank">Read more</a>
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Loading news...</p>
+</ng-template>
