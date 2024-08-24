@@ -1,28 +1,55 @@
-# SalaDeAula
+# Trabalho Final - Programação WEB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+## Descrição
 
-## Development server
+O trabalho final da disciplina de Programação Web consiste no desenvolvimento de uma aplicação web utilizando Angular e Firebase. O projeto inclui autenticação de usuários, consumo de uma API externa, proteção de rotas, implementação de CRUD, criação de um Pipe personalizado, e hospedagem no GitHub.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prazo de Entrega
 
-## Code scaffolding
+29/08/2024
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Forma de Envio
 
-## Build
+Exclusivamente via SIGA. O aluno deverá enviar o link do projeto que deverá estar publicado no GitHub.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos do Sistema
 
-## Running unit tests
+1. **Autenticação de Usuários:**
+   - O sistema deve permitir que os usuários façam login e criem novas contas.
+   - A autenticação é implementada utilizando o Firebase Authentication (email/password).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Consumo de API Externa:**
+   - A aplicação consome dados de uma API externa. No caso deste projeto, a API utilizada é a API de notícias.
+   - A API fornece notícias aleatórias e permite operações CRUD sobre as notícias.
 
-## Running end-to-end tests
+3. **Proteção de Rotas:**
+   - As rotas da aplicação são protegidas, garantindo que apenas usuários autenticados possam acessar determinadas áreas do sistema.
+   - Um mecanismo de guarda de rotas (Auth Guard) foi implementado para verificar a autenticidade do usuário antes de permitir o acesso.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. **Cadastro Base (CRUD):**
+   - Implementa o fluxo básico (listar, criar, editar e excluir) de tratamento de dados para uma tabela no Firestore.
+   - A estrutura da tabela é definida pelo estudante e é utilizada para gerenciar notícias.
+   - Validações dos campos do formulário são obrigatórias.
 
-## Further help
+5. **Criação de um Pipe:**
+   - Um Pipe personalizado foi criado no Angular.
+   - O Pipe é utilizado para realizar uma transformação específica nos dados exibidos. No caso deste projeto, o Pipe altera a cor do título da notícia para vermelho quando está salvo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# projetoNEWS" 
+6. **Hospedagem no GitHub:**
+   - O código da aplicação está hospedado em um repositório no GitHub.
+   - O link para o repositório GitHub deve ser postado no SIGA para avaliação.
+
+## Funcionalidades Adicionais
+
+- **CRUD de Notícias:**
+  - Os usuários podem salvar, excluir e editar notícias.
+  - A lista de notícias permite adicionar anotações e alterar a ordem das notícias.
+
+- **Pipeline:**
+  - O Pipe personalizado destaca o título da notícia em vermelho quando está salvo.
+
+## Como Executar o Projeto
+
+1. **Clone o Repositório:**
+   ```sh
+   git clone https://github.com/Azogh/projetoNEWS.git
