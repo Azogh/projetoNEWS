@@ -4,13 +4,6 @@
 
 O trabalho final da disciplina de Programação Web consiste no desenvolvimento de uma aplicação web utilizando Angular e Firebase. O projeto inclui autenticação de usuários, consumo de uma API externa, proteção de rotas, implementação de CRUD, criação de um Pipe personalizado, e hospedagem no GitHub.
 
-## Prazo de Entrega
-
-29/08/2024
-
-## Forma de Envio
-
-Exclusivamente via SIGA. O aluno deverá enviar o link do projeto que deverá estar publicado no GitHub.
 
 ## Requisitos do Sistema
 
