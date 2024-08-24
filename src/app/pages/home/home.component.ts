@@ -1,37 +1,29 @@
+// src/app/pages/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '@services/news.service';  
 import { Observable } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { NewsArticle, NewsCrudService } from '../../services/news-crud.service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  randomArticle: any;  // Propriedade para armazenar a notícia aleatória
-newsArticles: any;
+  newsArticles$: Observable<NewsArticle[]>;
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsCrudService: NewsCrudService) {}
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(
-      (data) => {
-        if (data.articles.length > 0) {
-          this.randomArticle = this.getRandomArticle(data.articles);
-        }
-      },
-      (error) => {
-        console.error('Erro ao buscar notícias', error);
-      }
-    );
+    this.newsArticles$ = this.newsCrudService.getAllNews();
   }
 
-  // Função para selecionar uma notícia aleatória
-  private getRandomArticle(articles: any[]): any {
-    const randomIndex = Math.floor(Math.random() * articles.length);
-    return articles[randomIndex];
+  // Exemplo de método para adicionar uma notícia
+  addNews(article: NewsArticle): void {
+    this.newsCrudService.createNews(article).subscribe();
+  }
+
+  // Exemplo de método para excluir uma notícia
+  deleteNews(id: string): void {
+    this.newsCrudService.deleteNews(id).subscribe();
   }
 }

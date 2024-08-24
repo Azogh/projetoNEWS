@@ -1,9 +1,11 @@
-<div *ngIf="newsArticles; else loading">
+<!-- src/app/pages/home/home.component.html -->
+<div *ngIf="newsArticles$ | async as newsArticles; else loading">
   <ul>
     <li *ngFor="let article of newsArticles">
       <h3>{{ article.title }}</h3>
       <p>{{ article.description }}</p>
       <a [href]="article.url" target="_blank">Read more</a>
+      <button (click)="deleteNews(article.id!)">Delete</button>
     </li>
   </ul>
 </div>
@@ -11,3 +13,5 @@
 <ng-template #loading>
   <p>Loading news...</p>
 </ng-template>
+
+<!-- Adicione um formulário para adicionar notícias se necessário -->
